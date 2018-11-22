@@ -1,8 +1,15 @@
 # Signature SDK Windows
 
-## Version 3.21.1
+## Version 4.0.1
 
 ## History
+
+* Release v4.0.1   22-Oct-2018
+    * Rebuild .net interop files
+
+* Release v4.0.0   18-Oct-2018
+    * Added ISO and Encryption functionality - license dependent
+    * Updated icon used in the signature capture window
 
 * Release v3.21.1  27-Sep-2018
     * low pressure strokes rendered darker to avoid apparent loss 
