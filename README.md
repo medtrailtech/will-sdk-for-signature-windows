@@ -4,27 +4,27 @@
 
 ---
 
-WILL SDK for Signature provides software components to capture handwritten signatures from a pen device or tablet. The SDK simplifies the interaction with Wacom pen tablets and provides API to manage and display signatures. While this introduction is based on the Windows version of the Signature SDK, the principles also apply to the mobile versions.
+The WILL SDK for Signature includes the Wacom Signature Library used to capture handwritten signatures from a pen device or tablet. The Signature Library simplifies the interaction with Wacom pen tablets and provides API to manage and display signatures. While this introduction is based on the Windows version of the Signature Library, the principles also apply to the mobile versions.
 
-The Signature SDK is used by the Wacom sign pro PDF application:
+The Signature Library is used by the Wacom sign pro PDF application:
 
 ![sign pro PDF app](images/SignPro.png)
 
-Sign pro PDF uses the Signature SDK API to capture and render signatures. To avoid a common misconception, note that the Signature SDK does not include PDF related API and sign pro PDF uses a separate SDK to display and modify PDF documents.
+Sign pro PDF uses the Signature Library API to capture and render signatures. To avoid a common misconception, note that the Signature Library does not include PDF related API and sign pro PDF uses a separate SDK to display and modify PDF documents.
 
-## SDK Installation
+## Signature Library Installation
 
-The components are installed as a set of COM DLLs. Access from an applcation is through the Microsoft ActiveX interface rather than DLL linking:
+The components are installed as a set of COM DLLs. Access from an application is through the Microsoft ActiveX interface rather than DLL linking:
 
-![signature sdk components](images/Signature-SDK.png)
+![signature library components](images/Signature-Library.png)
 
 ## Signature Capture
 
-An application using the Signature SDK will provide a way of starting signature capture, for example by displaying a ‘sign’ button. The resulting call to the signature capture function will display a dialog:
+An application using the Signature Library will provide a way of starting signature capture, for example by displaying a ‘sign’ button. The resulting call to the signature capture function will display a dialog:
 
 ![signature capture](images/SigCapture.png)
 
-The signature capture function isolates the application from the type of pen input device. The Signature SDK detects the type of connected device and automatically runs the code needed to communicate with it. Usually the pen input device will be an STU tablet such as the STU-540 or a Wintab device such as the DTU-1141. From an interface perspective these are very different devices but the Signature SDK allows an application to use them in a common way.
+The signature capture function isolates the application from the type of pen input device. The Signature Library detects the type of connected device and automatically runs the code needed to communicate with it. Usually the pen input device will be an STU tablet such as the STU-540 or a Wintab device such as the DTU-1141. From an interface perspective these are very different devices but the Signature Library allows an application to use them in a common way.
 
 The dialog shows the username, reason and timestamp which will be saved with the signature. While signing, the user can see the pen trace and clear it to sign again if needed before accepting the signature with the OK button.
 
@@ -32,11 +32,11 @@ A dialog is used so that the signing process can be independent of the underlyin
 
 To provide a high quality pen and ink experience the signature components use Wacom’s Ink Layer Language (WILL) technology for signature capture and image creation.
 
-The Signature SDK installation includes common language translations. The Windows installation language is detected and the relevant language is selected automatically.
+The Signature Library installation includes common language translations. The Windows installation language is detected and the relevant language is selected automatically.
 
 ## Signature Object
 
-The Signature SDK creates a Signature Object to hold a captured signature. A signature can be handled by an application in its native binary format (Forensic Signature Stream - FSS) or in the Base64 text encoded format such as the following example:
+The Signature Library creates a Signature Object to hold a captured signature. A signature can be handled by an application in its native binary format (Forensic Signature Stream - FSS) or in the Base64 text encoded format such as the following example:
 
 **Base64 Signature Object:**
 ```
@@ -109,7 +109,7 @@ API is not provided to extract the pen data because this is personal information
 
 ## Signature Compatibility
 
-Signature SDKs are available for:
+Signature Libraries are available for:
 
     * Windows
     * iOS
@@ -124,7 +124,7 @@ This means that signatures can be readily exchanged and used in related applicat
 
 ## Signature API Examples
 
-The Signature SDK includes examples in a range of languages including:
+The Signature Library includes examples in a range of languages including:
 
     * HTML
     * Java
@@ -142,7 +142,7 @@ Samples are included to help get started with the SDK.
 ---
 
 ## Documentation
-For further details on using the SDK see [https://developer-docs.wacom.com](https://developer-docs.wacom.com) 
+For further details on using the Signature Library see [https://developer-docs.wacom.com](https://developer-docs.wacom.com) 
 Navigate to **WILL SDK for signature**
 
 The API Reference is available directly in the downloaded SDK.
