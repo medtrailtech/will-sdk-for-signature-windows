@@ -15,9 +15,8 @@ https://developer-docs.wacom.com/display/DevDocs/WILL+SDK+-+FAQs
 Download the SDK from https://developer.wacom.com/developer-dashboard
 
 * login using your Wacom ID
-* Select **Downloads**
-* Select **Signature Edition**
-* Under WILL SDK for Signature: Download Signature SDK for Windows Desktop
+* Select **Downloads for signature**
+* Download **Signature SDK for Windows Desktop**
 * Accept the End User License Agreement to use the SDK
 
 The downloaded Zip file contains the SDK with documentation.
@@ -31,9 +30,9 @@ A license is needed to use the Signature Library and a fully functional evaluati
 * login using your Wacom ID
 * Select **Licenses**
 * Select **New Evaluation License**
-* Select **Generate Signature Edition License**
+* Select **Generate Evaluation License**  for WILL SDK for signature
 * Return to Licenses where the new license file is ready for download
-* Download the signature-edition-evaluation-license.txt license file
+* Download the license file
 
 The license is supplied as a JWT text string in a text file. This will need to be copied into your application. The self-service evaluation licenses have a three-month expiry date from the time of creation. However you can generate a new license at any time. 
 
