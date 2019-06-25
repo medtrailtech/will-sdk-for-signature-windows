@@ -2,10 +2,11 @@
 
 ## Test environment
 
-Samples are supplied for Windows 7 and above.
-HTML samples can only be used in Internet Explorer because ActiveX support is needed.
+A variety of samples are supplied for Windows 7 and above.
+
 To test the samples use a Wacom device such as an STU-500 or a pen/tablet device such as a DTU-1141.
-To use a pen/tablet device its driver will need to be installed separately to include the wintab interface used by the Signature Library.
+
+To use a pen/tablet device you will need to install the Wacom driver which provides the wintab interface used by the Signature Library.
 See the FAQs for device installation:
 https://developer-docs.wacom.com/display/DevDocs/WILL+SDK+-+FAQs
 
@@ -22,22 +23,7 @@ Download the SDK from https://developer.wacom.com/developer-dashboard
 The downloaded Zip file contains the SDK with documentation.
 The folder 'SignatureSDK' is included in the Zip file and contains the Signature Library MSI installer.
 
-## Download an evaluation license
-
-A license is needed to use the Signature Library and a fully functional evaluation license is free to download as follows:
-
-* Navigate to https://developer.wacom.com/developer-dashboard
-* login using your Wacom ID
-* Select **Licenses**
-* Select **New Evaluation License**
-* Select **Generate Evaluation License**  for WILL SDK for signature
-* Return to Licenses where the new license file is ready for download
-* Download the license file
-
-The license is supplied as a JWT text string in a text file. This will need to be copied into your application. The self-service evaluation licenses have a three-month expiry date from the time of creation. However you can generate a new license at any time. 
-
-
-## Install the Signature Library
+## Install the Signature SDK
 
 Regardless of your Windows system being 32 or 64 bit, to get started we recommend installing the 32-bit Signature Library:
 **Wacom-Signature-SDK-x86-vXX.msi**
@@ -55,14 +41,34 @@ The Signature Library consists of:
 * language translations
 
 ----
+## Signature Library License
+
+A license must be included in your application code to use the Signature Library.
+The licensing scheme has recently been relaxed and the standard license can be used free of charge for all functions excluding:
+- signature encryption
+- ISO signature formatting
+
+### Signature Library Standard License
+
+The Standard Signature Library license is in JSON Web Token (JWT) format and can be copied here:
+
+```
+eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI3YmM5Y2IxYWIxMGE0NmUxODI2N2E5MTJkYTA2ZTI3NiIsImV4cCI6MjE0NzQ4MzY0NywiaWF0IjoxNTYwOTUwMjcyLCJyaWdodHMiOlsiU0lHX1NES19DT1JFIiwiU0lHQ0FQVFhfQUNDRVNTIl0sImRldmljZXMiOlsiV0FDT01fQU5ZIl0sInR5cGUiOiJwcm9kIiwibGljX25hbWUiOiJTaWduYXR1cmUgU0RLIiwid2Fjb21faWQiOiI3YmM5Y2IxYWIxMGE0NmUxODI2N2E5MTJkYTA2ZTI3NiIsImxpY191aWQiOiJiODUyM2ViYi0xOGI3LTQ3OGEtYTlkZS04NDlmZTIyNmIwMDIiLCJhcHBzX3dpbmRvd3MiOltdLCJhcHBzX2lvcyI6W10sImFwcHNfYW5kcm9pZCI6W10sIm1hY2hpbmVfaWRzIjpbXX0.ONy3iYQ7lC6rQhou7rz4iJT_OJ20087gWz7GtCgYX3uNtKjmnEaNuP3QkjgxOK_vgOrTdwzD-nm-ysiTDs2GcPlOdUPErSp_bcX8kFBZVmGLyJtmeInAW6HuSp2-57ngoGFivTH_l1kkQ1KMvzDKHJbRglsPpd4nVHhx9WkvqczXyogldygvl0LRidyPOsS5H2GYmaPiyIp9In6meqeNQ1n9zkxSHo7B11mp_WXJXl0k1pek7py8XYCedCNW5qnLi4UCNlfTd6Mk9qz31arsiWsesPeR9PN121LBJtiPi023yQU8mgb9piw_a-ccciviJuNsEuRDN3sGnqONG3dMSA
+```
+In the samples, replace the search string <<license>> with the license shown.
+
+To use the excluded functions please contact technical support for suitable sample code and a license:
+[developer relations portal.](https://developer.wacom.com/developer-dashboard/support)
+
 ## Sample Code
 
 Samples are supplied with a placeholder for the license string.
-Before you can use the samples you will need to replace all occurrences of the string <<license>> with your downloaded evaluation license.
+Before you can use the samples you will need to replace all occurrences of the string <<license>> with the Signature Library Standard license shown above.
+
 
 ## JavaScript Samples
 
-To demonstrate the Signature Library use standard tools native to Windows, specifically the scripting host CSCRIPT.EXE.
+To demonstrate the Signature Library you can use standard tools native to Windows, specifically the scripting host CSCRIPT.EXE.
 On a 64-bit Windows system there are separate versions for 32 and 64 bit applications. Which version you run determines which type of ActiveX control is expected.
 To get started, install the 32 bit version of the Signature Library and use the 32-bit version of script:
 On 64-bit Windows:
@@ -188,8 +194,10 @@ Run-JS.bat WizardUpload.js stu\640x480.png
 ----
 ## HTML Samples
 
+The HTML/JavaScript samples can only be used in Internet Explorer because ActiveX support is needed and this is specifically blocked in other browsers for security reasons. However, the HTML samples can be used to explore the API without using a development system such as Visual Studio, since a simple text editor can be used to make changes to the code.
+Please be aware that to use the Signature Library in a different browser such as Firefox or Chrome, additional services are required: see the cross-browser support library SigCaptX.
+
 Open the html samples in Internet Explorer - the only browser which will support ActiveX.
-To use the Signature Library in an alternative browser see the cross-browser support library SigCaptX.
 
 In IE you must 'Allow blocked content' as prompted to allow the ActiveX control to run.
 You can remove the prompt through IE Tools...Internet options...Advanced...Security: Allow active content
